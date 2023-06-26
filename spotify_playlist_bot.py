@@ -2,7 +2,7 @@ import discord
 import os
 
 
-class MyClient(discord.Client):
+class PlaylistBot(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
@@ -13,5 +13,5 @@ class MyClient(discord.Client):
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = MyClient(intents=intents)
+client = PlaylistBot(intents=intents)
 client.run(os.environ['discord_bot_secret'])
